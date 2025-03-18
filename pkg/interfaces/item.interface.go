@@ -19,6 +19,6 @@ type CatalogItemI struct {
 	CategoryId        uuid.UUID
 	SupplierId        uuid.UUID
 	IsActive          bool
-	CreatedAt         uint64
-	UpdatedAt         uint64
+	CreatedAt         int64
+	UpdatedAt         int64
 }

@@ -13,6 +13,6 @@ type CategoryI struct {
 	MultiLangValues   pgtype.JSONB
 	MultiLangIsActive bool
 	IsActive          bool
-	CreatedAt         uint64
-	UpdatedAt         uint64
+	CreatedAt         int64
+	UpdatedAt         int64
 }

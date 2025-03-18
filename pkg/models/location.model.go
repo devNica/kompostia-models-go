@@ -26,8 +26,8 @@ type StorageLocationModel struct {
 	ParentId       uuid.UUID              `gorm:"column:parent_id;type:varchar(36);null"`
 	HasAccounting  bool                   `gorm:"column:has_accounting;type:bool;not null;default:true"`
 	IsActive       bool                   `gorm:"column:is_active;type:bool;not null;default:true"`
-	CreatedAt      uint64                 `gorm:"column:created_at;type:bigint;not null;"`
-	UpdatedAt      uint64                 `gorm:"column:updated_at;type:bigint;null;default:0"`
+	CreatedAt      int64                  `gorm:"column:created_at;type:bigint;not null;"`
+	UpdatedAt      int64                  `gorm:"column:updated_at;type:bigint;null;default:0"`
 	LocationTypeId uuid.UUID              `gorm:"column:location_type_id;type;primaryKey"`
 	Items          []ItemHasLocationModel `gorm:"foreignKey:location_id"`
 }

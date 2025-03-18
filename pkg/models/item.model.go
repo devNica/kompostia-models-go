@@ -19,8 +19,8 @@ type CatalogItemModel struct {
 	CategoryId        uuid.UUID              `gorm:"column:category_id;type;primaryKey"`
 	SupplierId        uuid.UUID              `gorm:"column:supplier_id;type;primaryKey"`
 	IsActive          bool                   `gorm:"column:is_active;type:bool;not null;default:true"`
-	CreatedAt         uint64                 `gorm:"column:created_at;type:bigint;not null;"`
-	UpdatedAt         uint64                 `gorm:"column:updated_at;type:bigint;null;default:0"`
+	CreatedAt         int64                  `gorm:"column:created_at;type:bigint;not null;"`
+	UpdatedAt         int64                  `gorm:"column:updated_at;type:bigint;null;default:0"`
 	Locations         []ItemHasLocationModel `gorm:"foreignKey:item_id"`
 	Files             []ItemHasFileModel     `gorm:"foreignKey:item_id"`
 }

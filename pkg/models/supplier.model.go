@@ -7,8 +7,8 @@ type SupplierModel struct {
 	SupplierName string             `gorm:"column:supplier_name;type:varchar(255);not null;unique"`
 	SupplierCode string             `gorm:"column:supplier_code;type:varchar(10);not null;unique"`
 	IsActive     bool               `gorm:"column:is_active;type:bool;not null;default:true"`
-	CreatedAt    uint64             `gorm:"column:created_at;type:bigint;not null;"`
-	UpdatedAt    uint64             `gorm:"column:updated_at;type:bigint;null;default:0"`
+	CreatedAt    int64              `gorm:"column:created_at;type:bigint;not null;"`
+	UpdatedAt    int64              `gorm:"column:updated_at;type:bigint;null;default:0"`
 	Items        []CatalogItemModel `gorm:"foreignKey:supplier_id"`
 }
 

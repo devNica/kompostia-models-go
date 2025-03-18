@@ -5,6 +5,7 @@ import "github.com/google/uuid"
 type ItemBrandI struct {
 	Id        uuid.UUID
 	BrandName string
-	CreatedAt uint64
-	UpdatedAt uint64
+	IsActive  bool
+	CreatedAt int64
+	UpdatedAt int64
 }

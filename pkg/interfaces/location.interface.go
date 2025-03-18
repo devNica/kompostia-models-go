@@ -20,7 +20,7 @@ type StorageLocationI struct {
 	ParentId       uuid.UUID
 	HasAccounting  bool
 	IsActive       bool
-	CreatedAt      uint64
-	UpdatedAt      uint64
+	CreatedAt      int64
+	UpdatedAt      int64
 	LocationTypeId uuid.UUID
 }

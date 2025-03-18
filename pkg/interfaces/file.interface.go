@@ -5,6 +5,6 @@ import "github.com/google/uuid"
 type FileI struct {
 	Id       uuid.UUID
 	FileType string
-	FileSize uint64
+	FileSize int32
 	Binary   []byte
 }

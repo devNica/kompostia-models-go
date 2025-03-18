@@ -13,8 +13,8 @@ type CategoryModel struct {
 	MultiLangValues   pgtype.JSONB       `gorm:"column:multi_lang_values;type:jsonb;default:'[]'"`
 	MultiLangIsActive bool               `gorm:"column:multi_lang_is_active;type:bool;not null;default:false"`
 	IsActive          bool               `gorm:"column:is_active;type:bool;not null;default:true"`
-	CreatedAt         uint64             `gorm:"column:created_at;type:bigint;not null;"`
-	UpdatedAt         uint64             `gorm:"column:updated_at;type:bigint;null;default:0"`
+	CreatedAt         int64              `gorm:"column:created_at;type:bigint;not null;"`
+	UpdatedAt         int64              `gorm:"column:updated_at;type:bigint;null;default:0"`
 	Items             []CatalogItemModel `gorm:"foreignKey:category_id"`
 }
 
