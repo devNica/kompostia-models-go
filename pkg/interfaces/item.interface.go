@@ -2,7 +2,6 @@ package interfaces
 
 import (
 	"github.com/google/uuid"
-	"github.com/jackc/pgtype"
 )
 
 type CatalogItemI struct {
@@ -13,7 +12,7 @@ type CatalogItemI struct {
 	Sku               string
 	SupplierItemName  string
 	SupplierItemCode  string
-	MultiLangValues   pgtype.JSONB
+	MultiLangValues   []MultiLangModel
 	MultiLangIsActive bool
 	BrandId           uuid.UUID
 	CategoryId        uuid.UUID

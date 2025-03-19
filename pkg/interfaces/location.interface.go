@@ -2,15 +2,14 @@ package interfaces
 
 import (
 	"github.com/google/uuid"
-	"github.com/jackc/pgtype"
 )
 
 type LocationTypeI struct {
 	Id              uuid.UUID
 	Name            string
 	SupplierCode    string
-	MultiLangValues pgtype.JSONB
-	Rules           pgtype.JSONB
+	MultiLangValues []MultiLangModel
+	Rules           []SuggestedLocations
 }
 
 type StorageLocationI struct {
