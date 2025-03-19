@@ -9,6 +9,10 @@ import (
 //go:embed queries/*.sql
 var queriesFS embed.FS
 
+var SQLQueries = map[string]string{
+	"registeredCategories": "registered_categories.sql",
+}
+
 func LoadSQLQuery(queryKey string, params map[string]string) (string, error) {
 
 	queryFile, exists := SQLQueries[queryKey]
@@ -17,7 +21,7 @@ func LoadSQLQuery(queryKey string, params map[string]string) (string, error) {
 		return "", fmt.Errorf("consulta SQL no encontrada: %s", queryKey)
 	}
 
-	filePath := fmt.Sprintf("queries/%s.sql", queryFile)
+	filePath := fmt.Sprintf("queries/%s", queryFile)
 
 	content, err := queriesFS.ReadFile(filePath)
 
