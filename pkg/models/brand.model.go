@@ -5,7 +5,7 @@ import (
 )
 
 type ItemBrandModel struct {
-	Id        uuid.UUID          `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Id        uuid.UUID          `gorm:"primaryKey;column:id;type:uuid;unique;default:gen_random_uuid()"`
 	BrandName string             `gorm:"column:brand_name;type:varchar(100);not null;unique"`
 	IsActive  bool               `gorm:"column:is_active;type:bool;not null;default:true"`
 	CreatedAt int64              `gorm:"column:created_at;type:bigint;not null;"`

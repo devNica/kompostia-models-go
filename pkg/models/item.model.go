@@ -6,7 +6,7 @@ import (
 )
 
 type CatalogItemModel struct {
-	Id                uuid.UUID              `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Id                uuid.UUID              `gorm:"primaryKey;column:id;type:uuid;unique;default:gen_random_uuid()"`
 	ItemName          string                 `gorm:"column:item_name;type:varchar(255);not null;unique"`
 	Description       string                 `gorm:"column:description;type:varchar(255);not null"`
 	Reference         string                 `gorm:"column:reference;type:varchar(255);not null;unique"`

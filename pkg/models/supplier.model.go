@@ -3,7 +3,7 @@ package models
 import "github.com/google/uuid"
 
 type SupplierModel struct {
-	Id           uuid.UUID          `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Id           uuid.UUID          `gorm:"primaryKey;column:id;type:uuid;unique;default:gen_random_uuid()"`
 	SupplierName string             `gorm:"column:supplier_name;type:varchar(255);not null;unique"`
 	SupplierCode string             `gorm:"column:supplier_code;type:varchar(10);not null;unique"`
 	IsActive     bool               `gorm:"column:is_active;type:bool;not null;default:true"`

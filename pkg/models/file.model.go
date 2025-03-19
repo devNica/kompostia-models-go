@@ -3,7 +3,7 @@ package models
 import "github.com/google/uuid"
 
 type FileModel struct {
-	Id       uuid.UUID          `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Id       uuid.UUID          `gorm:"primaryKey;column:id;type:uuid;unique;default:gen_random_uuid()"`
 	FileType string             `gorm:"column:filetype;type:varchar(10);not null"`
 	FileSize int32              `gorm:"column:filesize;type:bigint;not null"`
 	Binary   []byte             `gorm:"column:binary;type:bytea;not null"`

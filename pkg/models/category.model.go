@@ -6,10 +6,10 @@ import (
 )
 
 type CategoryModel struct {
-	Id                uuid.UUID          `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Id                uuid.UUID          `gorm:"primaryKey;column:id;type:uuid;unique;default:gen_random_uuid()"`
 	CategoryName      string             `gorm:"column:category_name;type:varchar(100);not null;unique"`
 	Nomeclature       string             `gorm:"column:nomeclature;type:varchar(10);not null;unique"`
-	ParentId          *string            `gorm:"column:parent_id;type:varchar(36);null"`
+	ParentId          *uuid.UUID         `gorm:"column:parent_id;type:uuid;null"`
 	MultiLangValues   pgtype.JSONB       `gorm:"column:multi_lang_values;type:jsonb;default:'[]'"`
 	MultiLangIsActive bool               `gorm:"column:multi_lang_is_active;type:bool;not null;default:false"`
 	IsActive          bool               `gorm:"column:is_active;type:bool;not null;default:true"`
