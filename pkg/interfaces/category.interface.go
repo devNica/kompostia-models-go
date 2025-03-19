@@ -20,7 +20,7 @@ type FlatCategoryI struct {
 
 // Estructura recomendada para listar todas las categorias
 type ReflexCategoryI struct {
-	Id                int
+	Id                string
 	CategoryName      string
 	Nomeclature       string
 	ParentID          *string
