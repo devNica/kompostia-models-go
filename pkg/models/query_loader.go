@@ -1,19 +1,28 @@
 package models
 
 import (
+	"embed"
 	"fmt"
-	"os"
 	"strings"
 )
 
-func LoadSQLQuery(queryName string, params map[string]string) (string, error) {
+//go:embed queries/*.sql
+var queriesFS embed.FS
 
-	filePath := fmt.Sprintf("queries/%s.sql", queryName)
+func LoadSQLQuery(queryKey string, params map[string]string) (string, error) {
 
-	content, err := os.ReadFile(filePath)
+	queryFile, exists := SQLQueries[queryKey]
+
+	if !exists {
+		return "", fmt.Errorf("consulta SQL no encontrada: %s", queryKey)
+	}
+
+	filePath := fmt.Sprintf("queries/%s.sql", queryFile)
+
+	content, err := queriesFS.ReadFile(filePath)
 
 	if err != nil {
-		return "", fmt.Errorf("error al leer la consulta %s: %w", queryName, err)
+		return "", fmt.Errorf("error al leer la consulta %s: %w", queryKey, err)
 	}
 
 	query := string(content)
