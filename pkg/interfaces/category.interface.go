@@ -1,6 +1,8 @@
 package interfaces
 
 import (
+	"encoding/json"
+
 	"github.com/google/uuid"
 	"github.com/jackc/pgtype"
 )
@@ -20,11 +22,11 @@ type FlatCategoryI struct {
 
 // Estructura recomendada para listar todas las categorias
 type ReflexCategoryI struct {
-	Id                string       `gorm:"column:id"`
-	CategoryName      string       `gorm:"column:categoryName"`
-	Nomeclature       string       `json:"column:nomeclature"`
-	ParentID          *string      `json:"column:parentId"`
-	MultiLangCategory pgtype.JSONB `json:"column:multiLangCategory"`
-	MultiLangIsActive bool         `json:"column:multiLangIsActive"`
-	ParentName        *string      `json:"column:parentName"`
+	Id                string          `json:"id" gorm:"column:id"`
+	CategoryName      string          `json:"categoryName" gorm:"column:categoryName"`
+	Nomeclature       string          `json:"nomeclature" gorm:"column:nomeclature"`
+	ParentId          *string         `json:"parentId" gorm:"column:parentId"` // Puede ser null
+	MultiLangCategory json.RawMessage `json:"multiLangCategory" gorm:"column:multiLangCategory"`
+	MultiLangIsActive bool            `json:"multiLangIsActive" gorm:"column:multiLangIsActive"`
+	ParentName        *string         `json:"parentName" gorm:"column:parentName"` // Puede ser null
 }
