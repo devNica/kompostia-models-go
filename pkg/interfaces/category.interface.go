@@ -20,11 +20,11 @@ type FlatCategoryI struct {
 
 // Estructura recomendada para listar todas las categorias
 type ReflexCategoryI struct {
-	Id                string  `json:"id"`
-	CategoryName      string  `json:"categoryName"`
-	Nomeclature       string  `json:"nomeclature"`
-	ParentID          *string `json:"parentId"`
-	MultiLangCategory string  `json:"multiLangCategory"`
-	MultiLangIsActive bool    `json:"multiLangIsActive"`
-	ParentName        *string `json:"parentName"`
+	Id                string       `gorm:"column:id"`
+	CategoryName      string       `gorm:"column:categoryName"`
+	Nomeclature       string       `json:"column:nomeclature"`
+	ParentID          *string      `json:"column:parentId"`
+	MultiLangCategory pgtype.JSONB `json:"column:multiLangCategory"`
+	MultiLangIsActive bool         `json:"column:multiLangIsActive"`
+	ParentName        *string      `json:"column:parentName"`
 }
