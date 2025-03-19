@@ -9,7 +9,7 @@ type CategoryI struct {
 	Id                uuid.UUID
 	CategoryName      string
 	Nomeclature       string
-	ParentId          uuid.UUID
+	ParentId          *uuid.UUID
 	MultiLangValues   pgtype.JSONB
 	MultiLangIsActive bool
 	IsActive          bool

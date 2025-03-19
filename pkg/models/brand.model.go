@@ -1,6 +1,8 @@
 package models
 
-import "github.com/google/uuid"
+import (
+	"github.com/google/uuid"
+)
 
 type ItemBrandModel struct {
 	Id        uuid.UUID          `gorm:"primaryKey;column:id;type:varchar(36);unique"`

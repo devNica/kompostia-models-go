@@ -22,8 +22,8 @@ func (LocationTypeModel) TableName() string {
 type StorageLocationModel struct {
 	Id             uuid.UUID              `gorm:"primaryKey;column:id;type:varchar(36);unique"`
 	LocatioName    string                 `gorm:"column:location_name;type:varchar(100);not null;unique"`
-	Nomeclature    string                 `gorm:"column:item_name;type:varchar(10);not null;unique"`
-	ParentId       uuid.UUID              `gorm:"column:parent_id;type:varchar(36);null"`
+	Nomeclature    string                 `gorm:"column:nomeclature;type:varchar(10);not null;unique"`
+	ParentId       *string                `gorm:"column:parent_id;type:varchar(36);null"`
 	HasAccounting  bool                   `gorm:"column:has_accounting;type:bool;not null;default:true"`
 	IsActive       bool                   `gorm:"column:is_active;type:bool;not null;default:true"`
 	CreatedAt      int64                  `gorm:"column:created_at;type:bigint;not null;"`

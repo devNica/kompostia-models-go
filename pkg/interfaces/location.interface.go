@@ -17,7 +17,7 @@ type StorageLocationI struct {
 	Id             uuid.UUID
 	LocatioName    string
 	Nomeclature    string
-	ParentId       uuid.UUID
+	ParentId       *uuid.UUID
 	HasAccounting  bool
 	IsActive       bool
 	CreatedAt      int64
