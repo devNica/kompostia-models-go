@@ -1,4 +1,4 @@
-package configs
+package interfaces
 
 type DatabaseParamsConn struct {
 	DatabaseName     string

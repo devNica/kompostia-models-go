@@ -16,22 +16,28 @@
     ├── go.mod
     ├── go.sum
     ├── pkg/
-    |   ├── configs/
-    |   |     └── database.params.go
     |   ├── interfaces/
     |   |    ├── brand.interface.go
     |   |    ├── category.interface.go
+    |   |    ├── db_params.interface.go
     |   |    ├── file.interface.go
     |   |    ├── item.interface.go
     |   |    ├── location.interface.go
+    |   |    ├── settings.interface.go
     |   |    └── supplier.interface.go   
     │   ├── models/
+    |   |    ├── queries/
+    |   |    |    └── registered_categories.sql
+    |   |    ├── query_loader.go
+    |   |    ├── sql_queries.go
     |   |    ├── brand.model.go
     |   |    ├── category.model.go
     |   |    ├── file.model.go
     |   |    ├── item.model.go
     |   |    ├── location.model.go
     │   │    └── supplier.model.go
+    |   ├── sahred/
+    |   |    └── generics.go
     │   └── conn/
     │        └── database.conn.go
     ├── LICENSE

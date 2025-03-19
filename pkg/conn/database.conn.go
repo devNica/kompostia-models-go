@@ -3,7 +3,7 @@ package conn
 import (
 	"fmt"
 
-	"github.com/devnica/kompostia-models-go/pkg/configs"
+	"github.com/devnica/kompostia-models-go/pkg/interfaces"
 	"github.com/devnica/kompostia-models-go/pkg/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -11,7 +11,7 @@ import (
 )
 
 /* Funcion de Inicializacion de Conexion a la base de Datos*/
-func InitDB(params configs.DatabaseParamsConn, refreshModels bool) (*gorm.DB, error) {
+func InitDB(params interfaces.DatabaseParamsConn, refreshModels bool) (*gorm.DB, error) {
 
 	// leer parametros de conexion a la base de datos
 	db_user := params.DatabaseUser

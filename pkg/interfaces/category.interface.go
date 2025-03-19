@@ -5,7 +5,8 @@ import (
 	"github.com/jackc/pgtype"
 )
 
-type CategoryI struct {
+// Estructura recomendada para registro y actualizacion de una categoria
+type FlatCategoryI struct {
 	Id                uuid.UUID
 	CategoryName      string
 	Nomeclature       string
@@ -15,4 +16,15 @@ type CategoryI struct {
 	IsActive          bool
 	CreatedAt         int64
 	UpdatedAt         int64
+}
+
+// Estructura recomendada para listar todas las categorias
+type ReflexCategoryI struct {
+	Id                int
+	CategoryName      string
+	Nomeclature       string
+	ParentID          *string
+	MultiLangCategory string
+	MultiLangIsActive bool
+	ParentName        *string
 }
