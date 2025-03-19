@@ -20,11 +20,11 @@ type FlatCategoryI struct {
 
 // Estructura recomendada para listar todas las categorias
 type ReflexCategoryI struct {
-	Id                string
-	CategoryName      string
-	Nomeclature       string
-	ParentID          *string
-	MultiLangCategory []MultiLangModel
-	MultiLangIsActive bool
-	ParentName        *string
+	Id                string  `json:"id"`
+	CategoryName      string  `json:"categoryName"`
+	Nomeclature       string  `json:"nomeclature"`
+	ParentID          *string `json:"parentId"`
+	MultiLangCategory string  `json:"multiLangCategory"`
+	MultiLangIsActive bool    `json:"multiLangIsActive"`
+	ParentName        *string `json:"parentName"`
 }
