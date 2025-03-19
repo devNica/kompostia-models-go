@@ -24,7 +24,7 @@ type ReflexCategoryI struct {
 	CategoryName      string
 	Nomeclature       string
 	ParentID          *string
-	MultiLangCategory string
+	MultiLangCategory []MultiLangModel
 	MultiLangIsActive bool
 	ParentName        *string
 }
