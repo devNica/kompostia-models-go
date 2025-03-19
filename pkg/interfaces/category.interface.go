@@ -2,6 +2,7 @@ package interfaces
 
 import (
 	"github.com/google/uuid"
+	"github.com/jackc/pgtype"
 )
 
 type CategoryI struct {
@@ -9,7 +10,7 @@ type CategoryI struct {
 	CategoryName      string
 	Nomeclature       string
 	ParentId          *uuid.UUID
-	MultiLangValues   []MultiLangModel
+	MultiLangValues   pgtype.JSONB
 	MultiLangIsActive bool
 	IsActive          bool
 	CreatedAt         int64
