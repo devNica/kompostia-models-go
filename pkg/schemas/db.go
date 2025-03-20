@@ -1,4 +1,4 @@
-package interfaces
+package schemas
 
 type DbSchema struct {
 	DatabaseName     string

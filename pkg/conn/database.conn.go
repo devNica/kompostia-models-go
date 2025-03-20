@@ -4,14 +4,14 @@ import (
 	"fmt"
 
 	"github.com/devnica/kompostia-models-go/pkg/models"
-	sch "github.com/devnica/kompostia-models-go/pkg/schemas"
+	"github.com/devnica/kompostia-models-go/pkg/schemas"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 )
 
 /* Funcion de Inicializacion de Conexion a la base de Datos*/
-func InitDB(params sch.DbSchema, refreshModels bool) (*gorm.DB, error) {
+func InitDB(params schemas.DbSchema, refreshModels bool) (*gorm.DB, error) {
 
 	// leer parametros de conexion a la base de datos
 	db_user := params.DatabaseUser

@@ -1,4 +1,4 @@
-package interfaces
+package schemas
 
 type MultiLangSchema struct {
 	Value string
