@@ -8,13 +8,13 @@ WITH RECURSIVE category_path AS
                   c1.multi_lang_values AS "multiLangCategory", 
                   c1.multi_lang_is_active AS "multiLangIsActive"
            FROM {{schema}}.category c1
-           WHERE c1.id = {{categoryId}}
+           WHERE c1.id = '{{categoryId}}'
    
            UNION ALL
    
            -- Recorre hacia arriba la jerarquía
            SELECT c2.id AS "categoryId", 
-                  c2.name AS "categoryName", 
+                  c2.category_name AS "categoryName", 
                   c2.nomeclature As "nomeclature", 
                   c2.parent_id  AS "parentId",
                   c2.multi_lang_values AS "multiLangCategory", 
