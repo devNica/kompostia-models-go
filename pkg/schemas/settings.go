@@ -1,6 +1,6 @@
 package interfaces
 
-type MultiLangModel struct {
+type MultiLangSchema struct {
 	Value string
 	Lang  string
 }

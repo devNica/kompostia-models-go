@@ -2,7 +2,7 @@ package interfaces
 
 import "github.com/google/uuid"
 
-type SupplierI struct {
+type SupplierSchema struct {
 	Id           uuid.UUID
 	SupplierName string
 	SupplierCode string

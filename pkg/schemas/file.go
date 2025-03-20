@@ -2,7 +2,7 @@ package interfaces
 
 import "github.com/google/uuid"
 
-type FileI struct {
+type FileSchema struct {
 	Id       uuid.UUID
 	FileType string
 	FileSize int32

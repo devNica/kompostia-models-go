@@ -4,7 +4,7 @@ import (
 	"github.com/google/uuid"
 )
 
-type CatalogItemI struct {
+type CatalogItemSchema struct {
 	Id                uuid.UUID
 	ItemName          string
 	Description       string
@@ -12,7 +12,7 @@ type CatalogItemI struct {
 	Sku               string
 	SupplierItemName  string
 	SupplierItemCode  string
-	MultiLangValues   []MultiLangModel
+	MultiLangValues   []MultiLangSchema
 	MultiLangIsActive bool
 	BrandId           uuid.UUID
 	CategoryId        uuid.UUID

@@ -10,7 +10,8 @@ import (
 var queriesFS embed.FS
 
 var SQLQueries = map[string]string{
-	"registeredCategories": "registered_categories.sql",
+	"registeredCategories":    "registered_categories.sql",
+	"hierarchicalCategoryRel": "hierarchical_category_relationship.sql",
 }
 
 func LoadSQLQuery(queryKey string, params map[string]string) (string, error) {
@@ -39,4 +40,17 @@ func LoadSQLQuery(queryKey string, params map[string]string) (string, error) {
 	}
 
 	return query, nil
+}
+
+func ListEmbeddedQueries() {
+	files, err := queriesFS.ReadDir("queries")
+	if err != nil {
+		fmt.Println("Error al listar archivos embebidos:", err)
+		return
+	}
+
+	fmt.Println("Archivos embebidos en queries/:")
+	for _, file := range files {
+		fmt.Println("-", file.Name())
+	}
 }

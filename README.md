@@ -16,26 +16,27 @@
     ├── go.mod
     ├── go.sum
     ├── pkg/
-    |   ├── interfaces/
-    |   |    ├── brand.interface.go
-    |   |    ├── category.interface.go
-    |   |    ├── db_params.interface.go
-    |   |    ├── file.interface.go
-    |   |    ├── item.interface.go
-    |   |    ├── location.interface.go
-    |   |    ├── settings.interface.go
-    |   |    └── supplier.interface.go   
+    |   ├── schemas/
+    |   |    ├── brand.go
+    |   |    ├── category.go
+    |   |    ├── db.go
+    |   |    ├── file.go
+    |   |    ├── item.go
+    |   |    ├── location.go
+    |   |    ├── settings.go
+    |   |    └── supplier.go   
     │   ├── models/
     |   |    ├── queries/
+    |   |    |    ├── hierarchical_category_relationship.sql
     |   |    |    └── registered_categories.sql
     |   |    ├── query_loader.go
     |   |    ├── sql_queries.go
-    |   |    ├── brand.model.go
-    |   |    ├── category.model.go
-    |   |    ├── file.model.go
-    |   |    ├── item.model.go
-    |   |    ├── location.model.go
-    │   │    └── supplier.model.go
+    |   |    ├── brand.go
+    |   |    ├── category.go
+    |   |    ├── file.go
+    |   |    ├── item.go
+    |   |    ├── location.go
+    │   │    └── supplier.go
     |   ├── sahred/
     |   |    └── generics.go
     │   └── conn/
@@ -64,13 +65,13 @@ Asegúrate de tener configurado Go y ejecuta el siguiente comando en tu proyecto
     import (
         "fmt"
 
-        "github.com/devnica/kompostia-models-go/pkg/configs"
+        schema "github.com/devnica/kompostia-models-go/pkg/schemas"
         "github.com/devnica/kompostia-models-go/pkg/conn"
     )
 
     func main() {
 
-        dbParams := configs.DatabaseParamsConn{
+        dbParams := schema.DbSchema{
             DatabaseName:     "dbName",
             DatabasePassword: "dbPassword",
             DatabaseUser:     "dbUser",
@@ -92,7 +93,7 @@ Asegúrate de tener configurado Go y ejecuta el siguiente comando en tu proyecto
 
 # 📖 Funciones Exportadas
 
-    func InitDB(params configs.DatabaseParamsConn, refreshModels bool) (*gorm.DB, error)
+    func InitDB(params schema.DbSchema, refreshModels bool) (*gorm.DB, error)
 
     Descripción: Inicia la conexión a la base de datos y realiza las migraciones.
 

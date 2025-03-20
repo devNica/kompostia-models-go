@@ -4,15 +4,15 @@ import (
 	"github.com/google/uuid"
 )
 
-type LocationTypeI struct {
+type LocationTypeSchema struct {
 	Id              uuid.UUID
 	Name            string
 	SupplierCode    string
-	MultiLangValues []MultiLangModel
+	MultiLangValues []MultiLangSchema
 	Rules           []SuggestedLocations
 }
 
-type StorageLocationI struct {
+type StorageLocationSchema struct {
 	Id             uuid.UUID
 	LocatioName    string
 	Nomeclature    string

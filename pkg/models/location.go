@@ -3,18 +3,18 @@ package models
 import (
 	"database/sql"
 
-	"github.com/devnica/kompostia-models-go/pkg/interfaces"
+	schema "github.com/devnica/kompostia-models-go/pkg/schemas"
 	"github.com/google/uuid"
 	"github.com/jackc/pgtype"
 )
 
 type LocationTypeModel struct {
-	Id              uuid.UUID                   `gorm:"primaryKey;column:id;type:varchar(36);unique"`
-	Name            string                      `gorm:"column:name;type:varchar(255);not null;unique"`
-	SupplierCode    string                      `gorm:"column:supplier_code;type:varchar(10);not null;unique"`
-	MultiLangValues []interfaces.MultiLangModel `gorm:"column:multi_lang_values;type:jsonb;default:'[]'"`
-	Rules           pgtype.JSONB                `gorm:"column:rules;type:jsonb;default:'[]'"`
-	Locations       []StorageLocationModel      `gorm:"foreignKey:location_type_id"`
+	Id              uuid.UUID                `gorm:"primaryKey;column:id;type:varchar(36);unique"`
+	Name            string                   `gorm:"column:name;type:varchar(255);not null;unique"`
+	SupplierCode    string                   `gorm:"column:supplier_code;type:varchar(10);not null;unique"`
+	MultiLangValues []schema.MultiLangSchema `gorm:"column:multi_lang_values;type:jsonb;default:'[]'"`
+	Rules           pgtype.JSONB             `gorm:"column:rules;type:jsonb;default:'[]'"`
+	Locations       []StorageLocationModel   `gorm:"foreignKey:location_type_id"`
 }
 
 // Establecer nombre personalizado de la tabla

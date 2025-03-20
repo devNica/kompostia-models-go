@@ -1,6 +1,6 @@
 package interfaces
 
-type DatabaseParamsConn struct {
+type DbSchema struct {
 	DatabaseName     string
 	DatabasePassword string
 	DatabaseUser     string
